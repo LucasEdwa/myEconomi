@@ -103,7 +103,7 @@ const Budgets = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-6 mb-2">
-                  <div className="w-32 h-62">
+                  <div className="w-62 h-62">
                     <BudgetPie budget={budget} colorIdx={idx} onColorChange={handleColorChange} />
                   </div>
                   <div className="flex-1">
@@ -139,7 +139,7 @@ const Budgets = () => {
                         type="submit"
                         className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition"
                       >
-                        Add Saving
+                        Add 
                       </button>
                       <button
                         type="button"

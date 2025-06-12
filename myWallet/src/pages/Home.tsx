@@ -95,7 +95,7 @@ const Home = () => {
                             <Pie data={transactionPieData} />
                         </div>
                     </div>
-                    <div className="flex justify-around mt-8">
+                    <div className="flex justify-around mt-8 gap-5">
                         <div className="text-green-700 font-semibold">
                             Total Income: <span className="font-bold">${incomeTotal.toFixed(2)}</span>
                         </div>
@@ -113,7 +113,7 @@ const Home = () => {
                                     <BudgetPie key={b.id} budget={b} colorIdx={idx} />
                                 ))}
                             </div>
-                            <ul className="mt-40 flex flex-col items-center gap-4">
+                            <ul className="mt-18 flex flex-col items-center gap-4">
                                 {budgets.map((b, idx) => {
                                     const saved = b.savings.reduce((sum, s) => sum + s.amount, 0);
                                     const percent = b.target > 0 ? Math.min(100, (saved / b.target) * 100) : 0;
