@@ -78,7 +78,7 @@ const Home = () => {
 
     return (
         <main className="">
-            <div className="max-w-4xl mx-auto mt-8 bg-white rounded shadow p-8">
+            <div className="max-w-4xl  mx-auto mt-8 bg-white rounded shadow p-8">
                 <h1 className="text-3xl font-extrabold mb-6 text-center text-blue-700">My Wallet</h1>
                 <p className="text-gray-700 text-left mb-4">
                     Track your income, expenses, and budgets in one place. In this way you can make easier family financial decisions avoiding stress with unnecessary expenses and saving money for your goals.
@@ -87,8 +87,8 @@ const Home = () => {
                     Use the navigation bar to add transactions and manage budgets.
                 </p>
             </div>
-            <div className="flex mt-12 bg-white rounded shadow p-8">
-                <div className="flex flex-col items-center w-1/2 border-r pr-8">
+            <div className="flex flex-col xl:flex-row mt-12 bg-white justify-center rounded shadow p-8">
+                <div className="flex flex-col items-center xl:w-1/2 border-r pr-8">
                     <h1 className="text-3xl font-bold mb-6 text-center text-blue-700">My Wallet Overview</h1>
                     <div className="flex justify-center">
                         <div className="w-60 h-60">
@@ -104,29 +104,29 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-1/2 pl-8">
+                <div className="xl:w-1/2 w-full xl:pl-8">
                     {budgets.length > 0 && (
-                        <div className="mt-12">
+                        <div className="mt-12 ">
                             <h2 className="text-2xl font-bold mb-4 text-blue-700 text-center">Budgets Progress</h2>
-                            <div className="flex flex-wrap gap-8 justify-center">
+                            <div className="flex flex-wrap gap-8 items-center justify-center">
                                 {budgets.map((b, idx) => (
                                     <BudgetPie key={b.id} budget={b} colorIdx={idx} />
                                 ))}
                             </div>
-                            <ul className="mt-18 flex flex-col items-center gap-4">
+                            <ul className="mt-18 flex flex-col w-full items-center gap-4 justify-center">
                                 {budgets.map((b, idx) => {
                                     const saved = b.savings.reduce((sum, s) => sum + s.amount, 0);
                                     const percent = b.target > 0 ? Math.min(100, (saved / b.target) * 100) : 0;
                                     const left = Math.max(0, b.target - saved);
                                     const color = getTailwindBgColor(expenseColors[idx % expenseColors.length]);
                                     return (
-                                        <li key={b.id} className="flex items-center gap-2 justify-between w-2/3">
-                                            <span className="inline-block w-4 h-4 rounded-full" style={{ background: color }} />
-                                            <span className="font-semibold">{b.name}:</span>
-                                            <span className='text-gray-700'>${saved.toFixed(2)}</span>/
-                                            <span className="text-green-600 font-bold"> ${b.target.toFixed(2)}</span>
-                                            <span className="ml-2 text-xs font-bold" style={{ color }}>{percent.toFixed(1)}%</span>
-                                            <span className="ml-2 text-xs text-red-600 font-semibold">Left: ${left.toFixed(2)}</span>
+                                        <li key={b.id} className="flex items-center gap-2 w-full justify-between xl:w-2/3">
+                                            <span className="w-3 h-2 rounded-full" style={{ backgroundColor: color }}></span>
+                                            <span className="font-semibold xl:text-xs  text-[10px]">{b.name}:</span>
+                                            <span className='text-gray-700 xl:text-xs '>${saved.toFixed(2)}</span>/
+                                            <span className="text-green-600 text-[10px] xl:text-xs font-bold"> ${b.target.toFixed(2)}</span>
+                                            <span className="ml-2 xl:text-xs text-[10px] font-bold" style={{ color }}>{percent.toFixed(1)}%</span>
+                                            <span className="ml-2 xl:text-xs text-[10px] text-red-600 font-semibold">Left: ${left.toFixed(2)}</span>
                                         </li>
                                     );
                                 })}

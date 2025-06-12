@@ -40,10 +40,10 @@ const Budgets = () => {
   };
 
   return (
-    <div className="mt-8 bg-white rounded shadow p-8 w-1/2 mx-auto">
+    <div className="mt-8 bg-white rounded w-full shadow xl:p-8 xl:w-1/2 mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-blue-700 text-center">Budgets & Goals</h2>
       <form onSubmit={handleAddBudget} className="mb-8 flex flex-col md:flex-row gap-4 items-end">
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <label className="block mb-1 font-semibold">Goal Name</label>
           <input
             className="w-full border rounded px-3 py-2"
@@ -53,7 +53,7 @@ const Budgets = () => {
             placeholder="e.g. New Laptop"
           />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <label className="block mb-1 font-semibold">Target Amount</label>
           <input
             type="number"
@@ -66,7 +66,7 @@ const Budgets = () => {
             placeholder="e.g. 1500"
           />
         </div>
-        <div>
+        <div className="flex-1 w-full items-center flex gap-2">
           <label className="block mb-1 font-semibold">Color</label>
           <input
             type="color"
@@ -74,13 +74,13 @@ const Budgets = () => {
             onChange={e => setGoalColor(e.target.value)}
             className="w-12 h-10 border rounded"
           />
-        </div>
         <button
           type="submit"
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
         >
           Add Goal
         </button>
+        </div>
       </form>
       <div>
         {budgets.length === 0 ? (
@@ -102,12 +102,12 @@ const Budgets = () => {
                     Saved: ${totalSaved.toFixed(2)}
                   </div>
                 </div>
-                <div className="flex items-center gap-6 mb-2">
+                <div className="flex items-center flex-col xl:flex-row  w-full gap-6 mb-2">
                   <div className="w-62 h-62">
                     <BudgetPie budget={budget} colorIdx={idx} onColorChange={handleColorChange} />
                   </div>
-                  <div className="flex-1">
-                    <div className="w-full bg-gray-200 rounded h-3 mb-2">
+                  <div className="flex-1 w-full">
+                    <div className=" bg-gray-200 rounded h-3 mb-2">
                       <div
                         className="h-3 rounded"
                         style={{ width: `${percent}%`, background: color }}
@@ -116,18 +116,18 @@ const Budgets = () => {
                     <div className="mb-2 text-sm text-gray-600">Progress: {percent.toFixed(1)}%</div>
                     <form
                       onSubmit={e => handleAddSaving(e, budget.id)}
-                      className="flex flex-col md:flex-row gap-2 items-end"
+                      className="flex flex-col md:flex-row gap-2 items-end "
                     >
                       <input
                         type="month"
-                        className="border rounded px-2 py-1"
+                        className="border rounded px-2 py-1 w-full xl:w-1/3"
                         value={savingMonth[budget.id] || ''}
                         onChange={e => setSavingMonth(prev => ({ ...prev, [budget.id]: e.target.value }))}
                         required
                       />
                       <input
                         type="number"
-                        className="border rounded px-2 py-1"
+                        className="border rounded px-2 py-1 w-full xl:w-1/3"
                         value={savingAmount[budget.id] || ''}
                         onChange={e => setSavingAmount(prev => ({ ...prev, [budget.id]: e.target.value }))}
                         required
