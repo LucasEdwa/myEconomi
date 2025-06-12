@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
+# MyWallet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MyWallet** is a modern personal finance dashboard built with React, TypeScript, Redux Toolkit, Chart.js, and Tailwind CSS. It helps you track your income, expenses, and savings goals with beautiful charts and a user-friendly interface.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Visit the app on AWS Amplify](https://main.d2gmgx6w7svcr0.amplifyapp.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **React** (with Vite) — Fast, modern UI library for building interactive interfaces.
+- **TypeScript** — Type-safe JavaScript for better code quality and maintainability.
+- **Redux Toolkit** — State management for transactions, budgets, and savings.
+- **React Redux** — Connects Redux state to React components.
+- **React Router DOM** — Client-side routing for multi-page navigation.
+- **Chart.js & react-chartjs-2** — Interactive charts (Pie, Line) for financial visualization.
+- **Tailwind CSS** — Utility-first CSS framework for rapid, responsive design.
+- **LocalStorage** — Persists transactions and budgets in the browser.
+- **AWS Amplify** — Cloud hosting and CI/CD for seamless deployment.
+
+---
+
+## ✨ Features
+
+- **Add, view, and delete transactions** (income & expenses)
+- **Visualize finances** with Pie and Line charts
+- **Create and manage budgets/goals** with progress tracking
+- **Assign custom colors** to each budget and savings progress
+- **Monthly savings tracking** for each goal
+- **Responsive design** for desktop and mobile
+- **Persistent data** using browser localStorage
+
+---
+
+## 📦 Project Structure
+
+```
+myWallet/
+  ├── src/
+  │   ├── components/      # Reusable UI components (NavBar, BudgetPie, etc.)
+  │   ├── pages/           # Page components (Home, Budgets, TransactionForm, etc.)
+  │   ├── store/           # Redux slices and store setup
+  │   ├── App.tsx
+  │   └── Router.tsx
+  ├── public/
+  ├── package.json
+  ├── tailwind.config.js
+  └── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🏗️ How to Run Locally
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+cd myWallet
+npm install
+npm run dev
 ```
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 📝 Deployment
+
+- **AWS Amplify** is used for CI/CD and hosting.
+- The build output is in `myWallet/dist`.
+- Build command: `npm run build` (or `cd myWallet && npm install && npm run build` if deploying from the repo root).
+
+---
+
+## 📊 Screenshots
+
+![Home Page](./src/assets/Home.png)
+![Budgets Page](./src/assets/Budgets.png)
+![Transactions Page](./src/assets/Transactions.png)
+
+---
+
+## 👨‍💻 Author
+
+- [Lucas Eduardo](https://github.com/LucasEdwa)
+
+---
+
+## 📃 License
+
+MIT
