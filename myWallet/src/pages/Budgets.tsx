@@ -40,7 +40,7 @@ const Budgets = () => {
   };
 
   return (
-    <div className="mt-8 bg-white rounded w-full shadow xl:p-8 xl:w-1/2 mx-auto">
+    <div className="mt-8 bg-white rounded w-full shadow p-8 xl:w-1/2 mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-blue-700 text-center">Budgets & Goals</h2>
       <form onSubmit={handleAddBudget} className="mb-8 flex flex-col md:flex-row gap-4 items-end">
         <div className="flex-1 w-full">

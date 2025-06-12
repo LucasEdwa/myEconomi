@@ -88,7 +88,7 @@ const Home = () => {
                 </p>
             </div>
             <div className="flex flex-col xl:flex-row mt-12 bg-white justify-center rounded shadow p-8">
-                <div className="flex flex-col items-center xl:w-1/2 border-r pr-8">
+                <div className="flex flex-col items-center xl:w-1/2 lx:border-r w-full justify-center xl:pr-8">
                     <h1 className="text-3xl font-bold mb-6 text-center text-blue-700">My Wallet Overview</h1>
                     <div className="flex justify-center">
                         <div className="w-60 h-60">
