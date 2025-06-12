@@ -95,11 +95,11 @@ const Home = () => {
                             <Pie data={transactionPieData} />
                         </div>
                     </div>
-                    <div className="flex justify-around mt-8 gap-5">
-                        <div className="text-green-700 font-semibold">
+                    <div className="flex justify-between mt-8 gap-5 w-full">
+                        <div className="text-green-700 font-semibold text-center">
                             Total Income: <span className="font-bold">${incomeTotal.toFixed(2)}</span>
                         </div>
-                        <div className="text-red-700 font-semibold">
+                        <div className="text-red-700 font-semibold text-center">
                             Total Expense: <span className="font-bold">${expenseAmounts.reduce((a, b) => a + b, 0).toFixed(2)}</span>
                         </div>
                     </div>
